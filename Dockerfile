@@ -1,10 +1,6 @@
-FROM ubuntu:16.04
+FROM antidotelabs/utility
 
-RUN apt-get update && apt-get install -y \
-    wget \
-    unzip \
-    git \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get install unzip tree
 
 RUN wget --quiet https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip \
   && unzip terraform_0.11.11_linux_amd64.zip \
